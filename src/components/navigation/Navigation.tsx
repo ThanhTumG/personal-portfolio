@@ -30,7 +30,7 @@ const Navigation = () => {
           ))}
 
           <Link
-            className="hidden md:block px-4 py-2 ml-2 border border-green text-green hover:bg-green/10 transition-all duration-100 text-sm font-medium"
+            className="hidden md:block px-4 py-2 ml-2 border border-green rounded-[1.5px] text-green hover:bg-green/10 transition-all duration-100 text-sm font-medium"
             href={"./CV_PhamChauThanhTung.pdf"}
             target="_blank"
             rel="noopener noreferrer"

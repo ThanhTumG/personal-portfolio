@@ -27,4 +27,14 @@ body {
   --color-lightest-slate: #ccd6f6;
   --color-white: #e6f1ff;
   --color-green: #64ffda;
+  --animate-fade-in: fadeIn 1.1s ease-out;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }
