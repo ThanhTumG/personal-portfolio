@@ -1,0 +1,46 @@
+"use client";
+import Link from "next/link";
+import React from "react";
+
+const Navigation = () => {
+  const navItems = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
+    { id: "contact", label: "Contact" },
+  ];
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-navy/90 backdrop-blur-sm border-b border-lightest-navy shadow-lg">
+      <div className="flex justify-between items-center max-w-6xl mx-auto px-6 py-4">
+        <button className="text-lg font-medium text-green hover:text-white transition-colors cursor-pointer">
+          Thanh Tung
+        </button>
+
+        <div className="hidden md:flex space-x-8">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => {}}
+              className="text-sm font-medium hover:text-green"
+            >
+              {item.label}
+            </button>
+          ))}
+
+          <Link
+            className="hidden md:block px-4 py-2 ml-2 border border-green text-green hover:bg-green/10 transition-all duration-100 text-sm font-medium"
+            href={"./CV_PhamChauThanhTung.pdf"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </Link>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navigation;
