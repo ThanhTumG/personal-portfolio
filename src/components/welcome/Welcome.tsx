@@ -1,10 +1,11 @@
 import React from "react";
+import { ArrowDown } from "lucide-react";
 
 const Welcome = () => {
   return (
     <div
       id="welcome"
-      className="min-h-screen flex flex-col items-start justify-center mx-auto animate-fade-in"
+      className="min-h-screen flex flex-col items-start justify-center animate-fade-in"
     >
       <p className="text-green mb-6 font-mono text-base md:text-lg">
         Hi, my name is
@@ -23,6 +24,12 @@ const Welcome = () => {
         software engineering. My focus is on building practical software
         applications that enhance user experience and deliver real value.
       </p>
+
+      <div className="absolute bottom-8 left-1/2 hidden md:block">
+        <button className="text-slate hover:text-green transition-colors animate-bounce">
+          <ArrowDown size={24} />
+        </button>
+      </div>
     </div>
   );
 };

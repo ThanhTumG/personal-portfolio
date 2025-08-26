@@ -13,7 +13,7 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-navy/90 backdrop-blur-sm border-b border-lightest-navy shadow-lg">
-      <div className="flex justify-between items-center max-w-6xl mx-auto px-6 py-4">
+      <div className="flex justify-between items-center w-ful px-10 py-4">
         <button className="text-lg font-medium text-green hover:text-white transition-colors cursor-pointer">
           Thanh Tung
         </button>
@@ -30,7 +30,7 @@ const Navigation = () => {
           ))}
 
           <Link
-            className="hidden md:block px-4 py-2 ml-2 border border-green rounded-[1.5px] text-green hover:bg-green/10 transition-all duration-100 text-sm font-medium"
+            className="hidden md:block px-4 py-2 ml-2 border border-green rounded-sm text-green hover:bg-green/10 transition-all duration-100 text-sm font-medium"
             href={"./CV_PhamChauThanhTung.pdf"}
             target="_blank"
             rel="noopener noreferrer"
