@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import { Title } from "../ui";
 
 const jobs = [
   {
@@ -49,13 +50,7 @@ const Experience = () => {
         isVisible ? "animate-fade-in-up" : "opacity-0"
       }`}
     >
-      <h2 className="flex w-full items-center mb-12 text-2xl md:text-3xl font-bold text-lightest-slate">
-        <span className="text-green mr-4 font-mono text-lg md:text-xl">
-          02.
-        </span>
-        Where I’ve worked
-        <div className="flex-1 h-px w-auto bg-lightest-navy ml-8 max-w-xs"></div>
-      </h2>
+      <Title index="02." content="Where I’ve worked" />
 
       <div className="flex md:flex-row flex-col gap-8">
         <div className="flex md:flex-col flex-row">
@@ -74,7 +69,7 @@ const Experience = () => {
           ))}
         </div>
 
-        <div className="flex min-h-92 max-w-2xl">
+        <div className="flex min-h-72 max-w-2xl">
           <div key={activeJob} className="animate-fade-in">
             <h3 className="text-xl font-medium text-lightest-slate mb-2">
               {jobs[activeJob].title}

@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { ImageWithFallback } from "../ui";
+import { ImageWithFallback, Title } from "../ui";
 
 const skills = [
   "JavaScript",
@@ -46,13 +46,7 @@ const About = () => {
         isVisible ? "animate-fade-in-up" : "opacity-0"
       }`}
     >
-      <h2 className="flex w-full items-center mb-12 text-2xl md:text-3xl font-bold text-lightest-slate">
-        <span className="text-green mr-4 font-mono text-lg md:text-xl">
-          01.
-        </span>
-        About Me
-        <div className="flex-1 h-px w-auto bg-lightest-navy ml-8 max-w-xs"></div>
-      </h2>
+      <Title index="01." content="About me" />
 
       <div className="grid md:grid-cols-3 grid-cols-1 gap-12 items-start">
         <div className="space-y-6 col-span-2 mr-6">
