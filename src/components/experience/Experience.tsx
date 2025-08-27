@@ -1,0 +1,114 @@
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+
+const jobs = [
+  {
+    company: "MeU Solutions",
+    title: "FrontEnd Developer Intern",
+    period: "June 2024 - August 2024",
+    url: "https://meu-solutions.com",
+    responsibilities: [
+      "Underwent training and actively developed proficiency in JavaScript and TypeScript programming languages, alongside a variety of JavaScript libraries and frameworks.",
+      "Contributed to the development of the Online Exam project as a Front-End Developer, focusing on building administrative interfaces and integrating APIs to implement management functionalities.",
+    ],
+  },
+];
+
+const Experience = () => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [activeJob, setActiveJob] = useState(0);
+
+  useEffect(() => {
+    const element = containerRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px -10% 0px",
+        threshold: 0.15,
+      }
+    );
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+  return (
+    <div
+      ref={containerRef}
+      className={`flex flex-col items-start justify-center pb-28 ${
+        isVisible ? "animate-fade-in-up" : "opacity-0"
+      }`}
+    >
+      <h2 className="flex w-full items-center mb-12 text-2xl md:text-3xl font-bold text-lightest-slate">
+        <span className="text-green mr-4 font-mono text-lg md:text-xl">
+          02.
+        </span>
+        Where I’ve worked
+        <div className="flex-1 h-px w-auto bg-lightest-navy ml-8 max-w-xs"></div>
+      </h2>
+
+      <div className="flex md:flex-row flex-col gap-8">
+        <div className="flex md:flex-col flex-row">
+          {jobs.map((job, index) => (
+            <button
+              key={job.company}
+              onClick={() => setActiveJob(index)}
+              className={`px-6 py-3 text-left border-l-0 md:border-l-2 md:border-b-0 border-b-2 transition-all duration-200 whitespace-nowrap md:whitespace-normal ${
+                activeJob === index
+                  ? "text-green border-green bg-light-navy"
+                  : "text-slate border-lightest-navy hover:text-green hover:bg-light-navy"
+              }`}
+            >
+              <span className="text-sm font-medium">{job.company}</span>
+            </button>
+          ))}
+        </div>
+
+        <div className="flex min-h-92 max-w-2xl">
+          <div key={activeJob} className="animate-fade-in">
+            <h3 className="text-xl font-medium text-lightest-slate mb-2">
+              {jobs[activeJob].title}
+              <span className="text-green"> @</span>
+              <a
+                href={jobs[activeJob].url}
+                className="text-green hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {jobs[activeJob].company}
+              </a>
+            </h3>
+
+            <p className="text-sm text-slate font-mono mb-6">
+              {jobs[activeJob].period}
+            </p>
+
+            <ul className="space-y-4">
+              {jobs[activeJob].responsibilities.map((responsibility, index) => (
+                <li
+                  key={index}
+                  className="flex items-start text-slate leading-relaxed"
+                >
+                  <div className="w-0 h-0 mt-2 mr-2 border-l-[8px] border-t-[4px] border-b-[4px] border-t-transparent border-b-transparent border-l-green" />
+                  <span className="text-justify">{responsibility}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Experience;

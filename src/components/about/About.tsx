@@ -42,7 +42,7 @@ const About = () => {
   return (
     <div
       ref={containerRef}
-      className={`flex flex-col items-start justify-center ${
+      className={`flex flex-col items-start justify-center pt-10 pb-28 ${
         isVisible ? "animate-fade-in-up" : "opacity-0"
       }`}
     >

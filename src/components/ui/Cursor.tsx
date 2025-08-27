@@ -1,5 +1,4 @@
 "use client";
-import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
 export default function Cursor() {
@@ -22,7 +21,7 @@ export default function Cursor() {
         return (
           <div
             key={index}
-            className="fixed top-0 left-0 blur-2xl text-black rounded-full pointer-events-none z-[-10] transition-all ease-out"
+            className="fixed top-0 left-0 blur-2xl text-black rounded-full pointer-events-none z-[-10] duration-[0s]"
             style={{
               backgroundColor: `rgba(34, 85, 160, ${0.008 + index * 0.005})`,
               width: side,
