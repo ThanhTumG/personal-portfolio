@@ -1,4 +1,11 @@
-import { About, Experience, Footer, Navigation, Welcome } from "@/components";
+import {
+  About,
+  Experience,
+  Footer,
+  Navigation,
+  Projects,
+  Welcome,
+} from "@/components";
 import { Cursor } from "@/components/ui";
 
 export default function Home() {
@@ -10,6 +17,7 @@ export default function Home() {
         <Welcome />
         <About />
         <Experience />
+        <Projects />
       </div>
 
       <Footer />

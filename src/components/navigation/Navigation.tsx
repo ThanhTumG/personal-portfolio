@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -13,12 +14,12 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-navy/90 backdrop-blur-sm border-b border-lightest-navy shadow-lg">
-      <div className="flex justify-between items-center w-ful px-10 py-4">
-        <button className="text-lg font-medium text-green hover:text-white transition-colors cursor-pointer">
-          Thanh Tung
+      <div className="flex relative items-center w-ful px-10 py-4">
+        <button className="absolute left-10 cursor-pointer">
+          <Image src="/Logo.svg" alt="Logo" width={47} height={47} />
         </button>
 
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex space-x-8 ml-auto">
           {navItems.map((item) => (
             <button
               key={item.id}
