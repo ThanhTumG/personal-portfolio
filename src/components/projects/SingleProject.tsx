@@ -2,6 +2,7 @@ import React from "react";
 import { ImageWithFallback } from "../ui";
 import { GitHubIcon } from "../ui/Icons";
 import { ExternalLinkIcon } from "lucide-react";
+import Link from "next/link";
 
 type Props = {
   index: number;
@@ -18,26 +19,31 @@ type Props = {
 const SingleProject = ({ prjInfo, index }: Props) => {
   return (
     <div
-      className={`grid grid-cols-12 gap-8 items-center group ${
-        index == 0 ? "" : "text-right"
+      className={`relative w-full flex md:flex-row items-center group ${
+        index == 1 ? "text-left md:justify-end" : "md:text-right"
       }`}
     >
-      <div className={`col-span-7 ${index % 2 == 0 ? "" : "md:order-2"}`}>
+      <div className="md:max-w-[57%] relative w-full">
         <ImageWithFallback
           src={prjInfo.image}
           alt={prjInfo.title}
-          className="w-full h-64 md:h-80 rounded overflow-hidden object-fit filter brightness-50 group-hover:brightness-100 transition-all duration-300"
+          className="w-full h-[24rem] rounded overflow-hidden object-fit filter brightness-25 md:brightness-50 md:group-hover:brightness-95 transition-all duration-300"
           loading="lazy"
         />
+        <div className="absolute inset-0 md:opacity-0 opacity-100 bg-navy/70 rounded"></div>
       </div>
 
-      <div className={`col-span-5 ${index % 2 == 0 ? "" : "md:order-1"}`}>
+      <div
+        className={`absolute z-10 px-6 md:px-0 ${
+          index % 2 == 0 ? "md:left-1/2" : "md:right-1/2"
+        }`}
+      >
         <p className="text-green font-mono text-sm mb-2">Featured Project</p>
         <h3 className="text-2xl font-bold text-light-slate mb-4 hover:text-green transition-colors">
           {prjInfo.title}
         </h3>
 
-        <div className="bg-light-navy p-6 rounded shadow-lg mb-6">
+        <div className="md:bg-light-navy md:p-6 rounded md:shadow-lg mb-6">
           <p className="text-light-slate leading-relaxed text-justify">
             {prjInfo.description}
           </p>
@@ -45,7 +51,7 @@ const SingleProject = ({ prjInfo, index }: Props) => {
 
         <div
           className={`flex flex-wrap gap-4 mb-6 ${
-            index % 2 == 0 ? "" : "md:justify-end"
+            index % 2 == 1 ? "md:mr-[75px]" : "md:justify-end md:ml-[75px]"
           }`}
         >
           {prjInfo.technologies.map((tech, index) => (
@@ -56,25 +62,25 @@ const SingleProject = ({ prjInfo, index }: Props) => {
         </div>
 
         <div
-          className={`flex space-x-4 ${index % 2 == 0 ? "" : "justify-end"}`}
+          className={`flex space-x-4 ${index % 2 == 1 ? "" : "md:justify-end"}`}
         >
-          <a
+          <Link
             href={prjInfo.github}
             target="_blank"
             rel="noopener noreferrer"
             className="text-lightest-slate hover:text-green transition-colors"
           >
             <GitHubIcon className="w-6 h-6" />
-          </a>
+          </Link>
 
-          <a
+          <Link
             href={prjInfo.external}
             target="_blank"
             rel="noopener noreferrer"
             className="text-lightest-slate hover:text-green transition-colors"
           >
             <ExternalLinkIcon size={24} />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

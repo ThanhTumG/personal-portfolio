@@ -5,23 +5,6 @@ import SingleProject from "./SingleProject";
 
 const featuredProjects = [
   {
-    title: "Online Exam System",
-    description:
-      "A web app for the Department of Science and Technology of Ho Chi Minh City, supporting up to 150 concurrent users with performance ranking by individual and unit",
-    technologies: [
-      "VS Code",
-      "TypeScript",
-      "ReactJS",
-      "TailwindCss",
-      "TanStack Query",
-      "Zustand",
-      "GitLab",
-    ],
-    image: "/onlineExamSystem.png",
-    github: "#",
-    external: "#",
-  },
-  {
     title: "UniLab Pass",
     description:
       "A mobile app for university lab access control using multi-factor authentication with QR code scanning and facial recognition.",
@@ -32,8 +15,23 @@ const featuredProjects = [
       "React Native Paper",
       "Zustand",
     ],
-    image: "#",
+    image: "/uniLabPass.png",
     github: "https://github.com/ThanhTumG/unilab-pass-front-end",
+    external: "#",
+  },
+  {
+    title: "Online Exam System",
+    description:
+      "A web app for the Department of Science and Technology of Ho Chi Minh City, supporting up to 150 concurrent users with performance ranking by individual and unit",
+    technologies: [
+      "TypeScript",
+      "ReactJS",
+      "TailwindCss",
+      "TanStack-Query",
+      "Zustand",
+    ],
+    image: "/onlineExamSystem.png",
+    github: "#",
     external: "#",
   },
 ];
@@ -75,7 +73,7 @@ const Projects = () => {
     >
       <Title index="03." content="Some Things I’ve Built" />
 
-      <div className="flex flex-col space-y-24">
+      <div className="flex flex-col w-full space-y-24">
         {featuredProjects.map((project, index) => (
           <SingleProject key={index} index={index} prjInfo={project} />
         ))}

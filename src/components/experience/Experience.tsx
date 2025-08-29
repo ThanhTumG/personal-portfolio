@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { Title } from "../ui";
+import Link from "next/link";
 
 const jobs = [
   {
@@ -74,14 +75,14 @@ const Experience = () => {
             <h3 className="text-xl font-medium text-lightest-slate mb-2">
               {jobs[activeJob].title}
               <span className="text-green"> @</span>
-              <a
+              <Link
                 href={jobs[activeJob].url}
                 className="text-green hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {jobs[activeJob].company}
-              </a>
+              </Link>
             </h3>
 
             <p className="text-sm text-slate font-mono mb-6">
