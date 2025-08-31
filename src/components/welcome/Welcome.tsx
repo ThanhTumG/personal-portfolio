@@ -1,13 +1,17 @@
 import React from "react";
 import { ArrowDown } from "lucide-react";
+import { scrollToSection } from "@/lib/utils";
 
 const Welcome = () => {
+  const handleScrollDown = () => {
+    scrollToSection("about");
+  };
   return (
     <div
-      id="welcome"
-      className="min-h-screen flex flex-col items-start justify-center animate-fade-in"
+      id="home"
+      className="mb-14 min-h-screen flex flex-col items-start justify-center animate-fade-in"
     >
-      <p className="text-green mb-6 font-mono text-base md:text-lg">
+      <p className="text-cyan mb-6 font-mono text-base md:text-lg">
         Hi, my name is
       </p>
 
@@ -25,8 +29,11 @@ const Welcome = () => {
         applications that enhance user experience and deliver real value.
       </p>
 
-      <div className="absolute bottom-8 left-1/2 hidden md:block">
-        <button className="text-slate hover:text-green transition-colors animate-bounce">
+      <div className="absolute bottom-10 left-1/2 hidden md:block">
+        <button
+          onClick={handleScrollDown}
+          className="text-slate hover:text-cyan transition-colors animate-bounce cursor-pointer"
+        >
           <ArrowDown size={24} />
         </button>
       </div>

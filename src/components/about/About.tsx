@@ -41,8 +41,9 @@ const About = () => {
 
   return (
     <div
+      id="about"
       ref={containerRef}
-      className={`flex flex-col items-start justify-center pt-10 pb-28 ${
+      className={`flex flex-col items-start justify-center pb-28 ${
         isVisible ? "animate-fade-in-up" : "opacity-0"
       }`}
     >
@@ -75,7 +76,7 @@ const About = () => {
                 key={skill}
                 className="flex items-center text-sm text-slate font-mono gap-1.5"
               >
-                <div className="w-0 h-0 border-l-[8px] border-t-[4px] border-b-[4px] border-t-transparent border-b-transparent border-l-green" />
+                <div className="w-0 h-0 border-l-[8px] border-t-[4px] border-b-[4px] border-t-transparent border-b-transparent border-l-cyan" />
                 {skill}
               </div>
             ))}
@@ -89,9 +90,9 @@ const About = () => {
               alt="Thanh Tumg"
               className="w-full h-80 object-cover rounded filter grayscale hover:filter-none group-hover:grayscale-0 transition-all duration-300"
             />
-            <div className="absolute inset-0 bg-green/30 hover:bg-transparent transition-all duration-300 rounded mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-cyan/30 hover:bg-transparent transition-all duration-300 rounded mix-blend-multiply"></div>
           </div>
-          <div className="absolute inset-0 border-2 border-green rounded translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300"></div>
+          <div className="absolute inset-0 border-2 border-cyan rounded translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300"></div>
         </div>
       </div>
     </div>

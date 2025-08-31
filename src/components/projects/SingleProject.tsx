@@ -30,7 +30,7 @@ const SingleProject = ({ prjInfo, index }: Props) => {
           className="w-full h-[24rem] rounded overflow-hidden object-fit filter brightness-25 md:brightness-50 md:group-hover:brightness-95 transition-all duration-300"
           loading="lazy"
         />
-        <div className="absolute inset-0 md:opacity-0 opacity-100 bg-navy/70 rounded"></div>
+        <div className="absolute inset-0 md:opacity-0 opacity-100 bg-blue/70 rounded"></div>
       </div>
 
       <div
@@ -38,12 +38,12 @@ const SingleProject = ({ prjInfo, index }: Props) => {
           index % 2 == 0 ? "md:left-1/2" : "md:right-1/2"
         }`}
       >
-        <p className="text-green font-mono text-sm mb-2">Featured Project</p>
-        <h3 className="text-2xl font-bold text-light-slate mb-4 hover:text-green transition-colors">
+        <p className="text-cyan font-mono text-sm mb-2">Featured Project</p>
+        <h3 className="text-2xl font-bold text-light-slate mb-4 hover:text-cyan transition-colors">
           {prjInfo.title}
         </h3>
 
-        <div className="md:bg-light-navy md:p-6 rounded md:shadow-lg mb-6">
+        <div className="md:bg-light-blue md:p-6 rounded md:shadow-lg mb-6">
           <p className="text-light-slate leading-relaxed text-justify">
             {prjInfo.description}
           </p>
@@ -71,7 +71,7 @@ const SingleProject = ({ prjInfo, index }: Props) => {
             href={prjInfo.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lightest-slate hover:text-green transition-colors"
+            className="text-lightest-slate hover:text-cyan transition-colors"
           >
             <GithubIcon className="w-6 h-6" />
           </Link>
@@ -80,7 +80,7 @@ const SingleProject = ({ prjInfo, index }: Props) => {
             href={prjInfo.external}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lightest-slate hover:text-green transition-colors"
+            className="text-lightest-slate hover:text-cyan transition-colors"
           >
             <ExternalLinkIcon size={24} />
           </Link>
