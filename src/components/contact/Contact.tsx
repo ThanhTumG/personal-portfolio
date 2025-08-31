@@ -3,8 +3,8 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="max-w-2xl mx-auto text-center">
-      <h4 className="text-green font-mono mb-5">04. What’s Next?</h4>
+    <div id="contact" className="max-w-2xl mx-auto text-center">
+      <h4 className="text-cyan font-mono mb-5">04. What’s Next?</h4>
       <h2 className="text-3xl md:text-5xl font-bold text-lightest-slate mb-6">
         Get In Touch
       </h2>
@@ -20,8 +20,8 @@ const Contact = () => {
         href="mailto:thanhtumg.2510@gmail.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-block px-8 py-4 border rounded border-green text-green
-       hover:bg-green/10 font-medium hover:shadow-[5px_5px_0px_0px_rgba(230,241,255,0.9)] hover:-translate-x-[5px] hover:-translate-y-[5px] transition-all duration-150"
+        className="inline-block px-8 py-4 border rounded border-cyan text-cyan
+       hover:bg-cyan/10 font-medium hover:shadow-[5px_5px_0px_0px_rgba(230,241,255,0.9)] hover:-translate-x-[5px] hover:-translate-y-[5px] transition-all duration-150"
       >
         Say Hello
       </Link>

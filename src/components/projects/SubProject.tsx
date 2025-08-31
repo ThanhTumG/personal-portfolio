@@ -15,15 +15,15 @@ type Props = {
 
 const SubProject = ({ prjInfo }: Props) => {
   return (
-    <div className="bg-light-navy p-6 rounded hover:translate-y-1 transition-transform duration-200 group">
+    <div className="bg-light-blue p-6 rounded hover:translate-y-1 transition-transform duration-200 group">
       <div className="flex items-start justify-between mb-4">
-        <Folder className="text-green" size={40} />
+        <Folder className="text-cyan" size={40} />
         <div className="flex space-x-4">
           <Link
             href={prjInfo.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lightest-slate hover:text-green transition-colors"
+            className="text-lightest-slate hover:text-cyan transition-colors"
           >
             <GithubIcon className="w-6 h-6" />
           </Link>
@@ -31,14 +31,14 @@ const SubProject = ({ prjInfo }: Props) => {
             href={prjInfo.external}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lightest-slate hover:text-green transition-colors"
+            className="text-lightest-slate hover:text-cyan transition-colors"
           >
             <ExternalLinkIcon size={24} />
           </Link>
         </div>
       </div>
 
-      <h4 className="text-xl font-semibold text-lightest-slate mb-3 group-hover:text-green transition-colors">
+      <h4 className="text-xl font-semibold text-lightest-slate mb-3 group-hover:text-cyan transition-colors">
         {prjInfo.title}
       </h4>
 

@@ -94,6 +94,7 @@ const Projects = () => {
 
   return (
     <div
+      id="projects"
       ref={containerRef}
       className={`flex flex-col items-start justify-center pb-28 ${
         isVisible ? "animate-fade-in-up" : "opacity-0"

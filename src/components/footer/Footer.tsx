@@ -46,7 +46,7 @@ const Footer = () => {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-light-slate hover:text-green hover:translate-y-1 transition-all duration-300"
+              className="text-light-slate hover:text-cyan hover:translate-y-1 transition-all duration-300"
               aria-label={link.label}
             >
               <link.icon className="w-6 h-6" />
@@ -62,7 +62,7 @@ const Footer = () => {
             href="mailto:thanhtumg.2510@gmail.com"
             rel="noopener noreferrer"
             target="_blank"
-            className="text-light-slate hover:text-green font-mono text-sm tracking-widest hover:translate-y-1 transition-all duration-300"
+            className="text-light-slate hover:text-cyan font-mono text-sm tracking-widest hover:translate-y-1 transition-all duration-300"
             style={{ writingMode: "vertical-rl" }}
           >
             thanhtumg.2510@gmail.com
@@ -71,7 +71,7 @@ const Footer = () => {
       </div>
 
       {/* Main Footer */}
-      <footer className="py-16 px-6 text-center lg:pl-20 lg:pr-20">
+      <footer className="pb-10 pt-28 px-6 text-center lg:pl-20 lg:pr-20">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center space-x-8 mb-8 lg:hidden">
             {socialLinks.map((link, index) => (
@@ -80,7 +80,7 @@ const Footer = () => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-light-slate hover:text-green transition-colors"
+                className="text-light-slate hover:text-cyan transition-colors"
                 aria-label={link.label}
               >
                 <link.icon size={24} />
@@ -88,14 +88,25 @@ const Footer = () => {
             ))}
           </div>
 
-          <div className="text-center">
+          <div className="text-center text-light-slate transition-colors font-mono text-sm">
+            <span className="block mb-2">Built by Thanh Tung</span>
+            <span className="block mb-2">
+              Design inspired by{" "}
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cyan tracking-tighter"
+                href={"https://brittanychiang.com"}
+              >
+                Brittany Chiang 😊
+              </Link>
+            </span>
             <Link
               href="https://github.com/ThanhTumG/personal-portfolio"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-light-slate hover:text-green transition-colors font-mono text-sm group"
+              className="hover:text-cyan"
             >
-              <span className="block mb-2">Built by Thanh Tung</span>
               <span className="flex items-center justify-center gap-1 text-xs opacity-75">
                 <ExternalLink size={12} />
                 View Source

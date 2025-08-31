@@ -46,6 +46,7 @@ const Experience = () => {
   }, []);
   return (
     <div
+      id="experience"
       ref={containerRef}
       className={`flex flex-col items-start justify-center pb-28 ${
         isVisible ? "animate-fade-in-up" : "opacity-0"
@@ -61,8 +62,8 @@ const Experience = () => {
               onClick={() => setActiveJob(index)}
               className={`px-6 py-3 text-left border-l-0 md:border-l-2 md:border-b-0 border-b-2 transition-all duration-200 whitespace-nowrap md:whitespace-normal ${
                 activeJob === index
-                  ? "text-green border-green bg-light-navy"
-                  : "text-slate border-lightest-navy hover:text-green hover:bg-light-navy"
+                  ? "text-cyan border-cyan bg-light-blue"
+                  : "text-slate border-lightest-blue hover:text-cyan hover:bg-light-blue"
               }`}
             >
               <span className="text-sm font-medium">{job.company}</span>
@@ -74,10 +75,10 @@ const Experience = () => {
           <div key={activeJob} className="animate-fade-in">
             <h3 className="text-xl font-medium text-lightest-slate mb-2">
               {jobs[activeJob].title}
-              <span className="text-green"> @</span>
+              <span className="text-cyan"> @</span>
               <Link
                 href={jobs[activeJob].url}
-                className="text-green hover:underline"
+                className="text-cyan hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -95,7 +96,7 @@ const Experience = () => {
                   key={index}
                   className="flex items-start text-slate leading-relaxed"
                 >
-                  <div className="w-0 h-0 mt-2 mr-2 border-l-[8px] border-t-[4px] border-b-[4px] border-t-transparent border-b-transparent border-l-green" />
+                  <div className="w-0 h-0 mt-2 mr-2 border-l-[8px] border-t-[4px] border-b-[4px] border-t-transparent border-b-transparent border-l-cyan" />
                   <span className="text-justify">{responsibility}</span>
                 </li>
               ))}
