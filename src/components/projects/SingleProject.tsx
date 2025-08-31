@@ -1,8 +1,8 @@
 import React from "react";
 import { ImageWithFallback } from "../ui";
-import { GitHubIcon } from "../ui/Icons";
 import { ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
+import { GithubIcon } from "../ui/Icons";
 
 type Props = {
   index: number;
@@ -55,7 +55,10 @@ const SingleProject = ({ prjInfo, index }: Props) => {
           }`}
         >
           {prjInfo.technologies.map((tech, index) => (
-            <span key={index} className="text-sm text-slate font-mono">
+            <span
+              key={`tech-${index}`}
+              className="text-sm text-slate font-mono"
+            >
               {tech}
             </span>
           ))}
@@ -70,7 +73,7 @@ const SingleProject = ({ prjInfo, index }: Props) => {
             rel="noopener noreferrer"
             className="text-lightest-slate hover:text-green transition-colors"
           >
-            <GitHubIcon className="w-6 h-6" />
+            <GithubIcon className="w-6 h-6" />
           </Link>
 
           <Link
