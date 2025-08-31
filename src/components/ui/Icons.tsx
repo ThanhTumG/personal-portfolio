@@ -1,20 +1,77 @@
 // components/icons/GitHubIcon.tsx
-import * as React from "react";
+import { createLucideIcon } from "lucide-react";
 
-export function GitHubIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.799 8.207 11.387.6.111.793-.261.793-.58
-        0-.287-.011-1.244-.017-2.255-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73
-        1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.76-1.605-2.665-.305-5.467-1.333-5.467-5.933
-        0-1.311.469-2.381 1.236-3.221-.124-.304-.536-1.527.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.404c1.018.005
-        2.044.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.649.243 2.872.12 3.176.77.84 1.235 1.91 1.235 3.221
-        0 4.61-2.807 5.625-5.479 5.922.429.372.823 1.104.823 2.223 0 1.606-.014 2.898-.014 3.293
-        0 .322.192.697.8.579C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12Z"
-      />
-    </svg>
-  );
-}
+export const GithubIcon = createLucideIcon("GithubIcon", [
+  [
+    "path",
+    {
+      d: "M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22",
+      key: "github-path-0",
+    },
+  ],
+]);
+
+export const InstagramIcon = createLucideIcon("Instagram", [
+  [
+    "rect",
+    {
+      x: "2",
+      y: "2",
+      width: "20",
+      height: "20",
+      rx: "5",
+      ry: "5",
+      key: "instagram-rect-0",
+    },
+  ],
+  [
+    "path",
+    {
+      d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z",
+      key: "instagram-path-0",
+    },
+  ],
+  [
+    "line",
+    { x1: "17.5", y1: "6.5", x2: "17.5", y2: "6.5", key: "instagram-line-0" },
+  ],
+]);
+
+export const FaceBookIcon = createLucideIcon("Facebook", [
+  [
+    "path",
+    {
+      d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
+      key: "facebook-path-0",
+    },
+  ],
+]);
+
+export const LinkedinIcon = createLucideIcon("Linkedin", [
+  [
+    "path",
+    {
+      d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z",
+      key: "linkedin-path-0",
+    },
+  ],
+  [
+    "rect",
+    {
+      x: "2",
+      y: "9",
+      width: "4",
+      height: "12",
+      key: "linkedin-rect-0",
+    },
+  ],
+  [
+    "circle",
+    {
+      cx: "4",
+      cy: "4",
+      r: "2",
+      key: "linkedin-circle-0",
+    },
+  ],
+]);

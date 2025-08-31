@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Title } from "../ui";
 import SingleProject from "./SingleProject";
+import SubProject from "./SubProject";
 
 const featuredProjects = [
   {
@@ -33,6 +34,33 @@ const featuredProjects = [
     image: "/onlineExamSystem.png",
     github: "#",
     external: "#",
+  },
+];
+
+const otherProjects = [
+  {
+    title: "Weather App",
+    description:
+      "A web app that provides real-time weather information and forecasts using the OpenWeatherMap API.",
+    technologies: ["React", "TypeScript", "Vite", "TailwindCSS"],
+    github: "https://github.com/ThanhTumG/weather-app",
+    external: "https://weather-app-thanhtumg.vercel.app/",
+  },
+  {
+    title: "Cat Wiki",
+    description:
+      "A web app that provides information about different cat breeds, including images, descriptions, and characteristics.",
+    technologies: ["React", "TypeScript", "Vite", "TailwindCSS"],
+    github: "https://github.com/ThanhTumG/cat-wiki",
+    external: "https://cat-wiki-thanhtumg.vercel.app",
+  },
+  {
+    title: "Job Search App",
+    description:
+      "A web app that allows users to search for jobs, filter results, and view job details using the The Muse API.",
+    technologies: ["React", "TypeScript", "Vite", "TailwindCSS"],
+    github: "https://github.com/ThanhTumG/job-search-app",
+    external: "https://job-search-app-thanhtumg.vercel.app",
   },
 ];
 
@@ -77,6 +105,18 @@ const Projects = () => {
         {featuredProjects.map((project, index) => (
           <SingleProject key={index} index={index} prjInfo={project} />
         ))}
+      </div>
+
+      <div className="flex flex-col mt-32 w-full text-center">
+        <h3 className="text-2xl font-bold text-lightest-slate mb-12">
+          Other Noteworthy Projects
+        </h3>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
+          {otherProjects.map((project, index) => (
+            <SubProject key={index} prjInfo={project} />
+          ))}
+        </div>
       </div>
     </div>
   );
