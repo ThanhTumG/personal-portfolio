@@ -86,9 +86,9 @@ const About = () => {
         <div className="relative group md:col-span-1">
           <div className="relative z-10">
             <ImageWithFallback
-              src="https://www.figma.com/make/zTAYcNzgZoqn8C43ZvOElz/Portfolio-Website-Clone?node-id=0-1&p=f&t=gXdWkKjBO6VLDIMb-0"
+              src="/avatar.jpg"
               alt="Thanh Tumg"
-              className="w-full h-80 object-cover rounded filter grayscale hover:filter-none group-hover:grayscale-0 transition-all duration-300"
+              className="w-full h-80 object-fit rounded filter grayscale hover:filter-none group-hover:grayscale-0 transition-all duration-300"
             />
             <div className="absolute inset-0 bg-cyan/30 hover:bg-transparent transition-all duration-300 rounded mix-blend-multiply"></div>
           </div>
