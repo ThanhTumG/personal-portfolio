@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PCTT - Portfolio",
+  title: "Tung Pham",
   description:
-    "Personal portfolio of Phạm Châu Thanh Tùng, a passionate software developer specializing in building exceptional digital experiences.",
+    "Personal portfolio of Pham Chau Thanh Tung, a passionate software developer specializing in building exceptional digital experiences.",
 };
 
 export default function RootLayout({

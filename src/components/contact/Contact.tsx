@@ -1,9 +1,41 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Contact = () => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const element = containerRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px -10% 0px",
+        threshold: 0.15,
+      }
+    );
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
   return (
-    <div id="contact" className="max-w-2xl mx-auto text-center">
+    <div
+      ref={containerRef}
+      id="contact"
+      className={`max-w-2xl mx-auto text-center ${
+        isVisible ? "animate-fade-in-up" : "opacity-0"
+      }`}
+    >
       <h4 className="text-cyan font-mono mb-5">04. What’s Next?</h4>
       <h2 className="text-3xl md:text-5xl font-bold text-lightest-slate mb-6">
         Get In Touch

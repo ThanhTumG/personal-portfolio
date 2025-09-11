@@ -89,7 +89,7 @@ const Footer = () => {
           </div>
 
           <div className="text-center text-light-slate transition-colors font-mono text-sm">
-            <span className="block mb-2">Built by Thanh Tung</span>
+            <span className="block mb-2">Built by Tung Pham</span>
             <span className="block mb-2">
               Design inspired by{" "}
               <Link

@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Title } from "../ui";
 import SingleProject from "./SingleProject";
-import SubProject from "./SubProject";
+import OtherProjects from "./OtherProjects";
 
 const featuredProjects = [
   {
@@ -109,15 +109,7 @@ const Projects = () => {
       </div>
 
       <div className="flex flex-col mt-32 w-full text-center">
-        <h3 className="text-2xl font-bold text-lightest-slate mb-12">
-          Other Noteworthy Projects
-        </h3>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
-          {otherProjects.map((project, index) => (
-            <SubProject key={index} prjInfo={project} />
-          ))}
-        </div>
+        <OtherProjects otherProjects={otherProjects} />
       </div>
     </div>
   );
