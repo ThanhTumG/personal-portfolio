@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <InitialLoader duration={3100}>{children}</InitialLoader>
+        <InitialLoader duration={3300}>{children}</InitialLoader>
       </body>
     </html>
   );
