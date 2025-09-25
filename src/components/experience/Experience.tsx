@@ -21,12 +21,8 @@ const Experience = () => {
   const [activeJob, setActiveJob] = useState(0);
 
   return (
-    <SlideInElement>
-      <div
-        id="experience"
-        className="flex flex-col items-start justify-center pb-28
-     "
-      >
+    <SlideInElement id="experience">
+      <div className="flex flex-col items-start justify-center pb-28">
         <Title index="02." content="Where I’ve worked" />
 
         <div className="flex md:flex-row flex-col gap-8">

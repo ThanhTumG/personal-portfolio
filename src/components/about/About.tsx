@@ -14,11 +14,8 @@ const skills = [
 
 const About = () => {
   return (
-    <SlideInElement>
-      <div
-        id="about"
-        className="flex flex-col items-start justify-center pb-28"
-      >
+    <SlideInElement id="about">
+      <div className="flex flex-col items-start justify-center pb-28">
         <Title index="01." content="About me" />
 
         <div className="grid md:grid-cols-3 grid-cols-1 gap-12 items-start">

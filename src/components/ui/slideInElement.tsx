@@ -5,6 +5,7 @@ interface Props {
   translate?: number;
   animationDelay?: number;
   duration?: number;
+  id?: string;
 }
 
 export const SlideInElement = ({
@@ -12,6 +13,7 @@ export const SlideInElement = ({
   translate = 30,
   animationDelay = 0,
   duration = 1.1,
+  id,
 }: Props) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -42,6 +44,7 @@ export const SlideInElement = ({
 
   return (
     <div
+      id={id}
       ref={containerRef}
       style={
         {

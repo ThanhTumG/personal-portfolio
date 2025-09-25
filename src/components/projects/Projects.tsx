@@ -67,12 +67,8 @@ const otherProjects = [
 
 const Projects = () => {
   return (
-    <SlideInElement>
-      <div
-        id="projects"
-        className="flex flex-col items-start justify-center pb-28
-      "
-      >
+    <SlideInElement id="projects">
+      <div className="flex flex-col items-start justify-center pb-28">
         <Title index="03." content="Some Things I’ve Built" />
 
         <div className="flex flex-col w-full space-y-24">

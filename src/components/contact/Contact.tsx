@@ -5,8 +5,8 @@ import { SlideInElement } from "../ui/slideInElement";
 
 const Contact = () => {
   return (
-    <SlideInElement>
-      <div id="contact" className="max-w-2xl mx-auto text-center">
+    <SlideInElement id="contact">
+      <div className="max-w-2xl mx-auto text-center">
         <h4 className="text-cyan font-mono mb-5">04. What’s Next?</h4>
         <h2 className="text-3xl md:text-5xl font-bold text-lightest-slate mb-6">
           Get In Touch
