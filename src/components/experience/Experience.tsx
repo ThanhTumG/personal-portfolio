@@ -1,7 +1,8 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { Title } from "../ui";
 import Link from "next/link";
+import { SlideInElement } from "../ui/slideInElement";
 
 const jobs = [
   {
@@ -17,94 +18,71 @@ const jobs = [
 ];
 
 const Experience = () => {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
   const [activeJob, setActiveJob] = useState(0);
 
-  useEffect(() => {
-    const element = containerRef.current;
-    if (!element) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: "0px 0px -10% 0px",
-        threshold: 0.15,
-      }
-    );
-
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, []);
   return (
-    <div
-      id="experience"
-      ref={containerRef}
-      className={`flex flex-col items-start justify-center pb-28 ${
-        isVisible ? "animate-fade-in-up" : "opacity-0"
-      }`}
-    >
-      <Title index="02." content="Where I’ve worked" />
+    <SlideInElement>
+      <div
+        id="experience"
+        className="flex flex-col items-start justify-center pb-28
+     "
+      >
+        <Title index="02." content="Where I’ve worked" />
 
-      <div className="flex md:flex-row flex-col gap-8">
-        <div className="flex md:flex-col flex-row">
-          {jobs.map((job, index) => (
-            <button
-              key={job.company}
-              onClick={() => setActiveJob(index)}
-              className={`px-6 py-3 text-left border-l-0 md:border-l-2 md:border-b-0 border-b-2 transition-all duration-200 whitespace-nowrap md:whitespace-normal ${
-                activeJob === index
-                  ? "text-cyan border-cyan bg-light-blue"
-                  : "text-slate border-lightest-blue hover:text-cyan hover:bg-light-blue"
-              }`}
-            >
-              <span className="text-sm font-medium">{job.company}</span>
-            </button>
-          ))}
-        </div>
-
-        <div className="flex min-h-72 max-w-2xl">
-          <div key={activeJob} className="animate-fade-in">
-            <h3 className="text-xl font-medium text-lightest-slate mb-2">
-              {jobs[activeJob].title}
-              <span className="text-cyan"> @</span>
-              <Link
-                href={jobs[activeJob].url}
-                className="text-cyan hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
+        <div className="flex md:flex-row flex-col gap-8">
+          <div className="flex md:flex-col flex-row">
+            {jobs.map((job, index) => (
+              <button
+                key={job.company}
+                onClick={() => setActiveJob(index)}
+                className={`px-6 py-3 text-left border-l-0 md:border-l-2 md:border-b-0 border-b-2 transition-all duration-200 whitespace-nowrap md:whitespace-normal ${
+                  activeJob === index
+                    ? "text-cyan border-cyan bg-light-blue"
+                    : "text-slate border-lightest-blue hover:text-cyan hover:bg-light-blue"
+                }`}
               >
-                {jobs[activeJob].company}
-              </Link>
-            </h3>
+                <span className="text-sm font-medium">{job.company}</span>
+              </button>
+            ))}
+          </div>
 
-            <p className="text-sm text-slate font-mono mb-6">
-              {jobs[activeJob].period}
-            </p>
-
-            <ul className="space-y-4">
-              {jobs[activeJob].responsibilities.map((responsibility, index) => (
-                <li
-                  key={index}
-                  className="flex items-start text-slate leading-relaxed"
+          <div className="flex min-h-72 max-w-2xl">
+            <div key={activeJob} className="animate-fade-in">
+              <h3 className="text-xl font-medium text-lightest-slate mb-2">
+                {jobs[activeJob].title}
+                <span className="text-cyan"> @</span>
+                <Link
+                  href={jobs[activeJob].url}
+                  className="text-cyan hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <div className="w-0 h-0 mt-2 mr-2 border-l-[8px] border-t-[4px] border-b-[4px] border-t-transparent border-b-transparent border-l-cyan" />
-                  <span className="text-justify">{responsibility}</span>
-                </li>
-              ))}
-            </ul>
+                  {jobs[activeJob].company}
+                </Link>
+              </h3>
+
+              <p className="text-sm text-slate font-mono mb-6">
+                {jobs[activeJob].period}
+              </p>
+
+              <ul className="space-y-4">
+                {jobs[activeJob].responsibilities.map(
+                  (responsibility, index) => (
+                    <li
+                      key={index}
+                      className="flex items-start text-slate leading-relaxed"
+                    >
+                      <div className="w-0 h-0 mt-2 mr-2 border-l-[8px] border-t-[4px] border-b-[4px] border-t-transparent border-b-transparent border-l-cyan" />
+                      <span className="text-justify">{responsibility}</span>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </SlideInElement>
   );
 };
 

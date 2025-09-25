@@ -4,6 +4,7 @@ import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import { SlideInElement } from "../ui/slideInElement";
 
 const navItems = [
   { id: "home", label: "Home" },
@@ -80,32 +81,46 @@ const Navigation = () => {
           </div>
 
           <div className="hidden md:flex space-x-8 ml-auto">
-            {navItems.map((item) => (
+            {navItems.map((item, index) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={cn(
-                  "px-2 relative text-sm font-medium hover:text-cyan cursor-pointer",
+                  " text-sm font-medium hover:text-cyan cursor-pointer",
                   activeSection === item.id
                     ? "text-cyan"
                     : "text-light-slate hover:text-cyan"
                 )}
               >
-                {item.label}
-                {activeSection === item.id && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-cyan" />
-                )}
+                <SlideInElement
+                  translate={12}
+                  animationDelay={index * 220}
+                  duration={0.5}
+                >
+                  <div className="relative block">
+                    {item.label}
+                    {activeSection === item.id && (
+                      <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-cyan" />
+                    )}
+                  </div>
+                </SlideInElement>
               </button>
             ))}
 
-            <Link
-              className="hidden md:block px-4 py-2 ml-2 border border-cyan rounded-sm text-cyan hover:bg-cyan/10 transition-all duration-100 text-sm font-medium"
-              href={"./CV_PhamChauThanhTung.pdf"}
-              target="_blank"
-              rel="noopener noreferrer"
+            <SlideInElement
+              translate={12}
+              animationDelay={5 * 220}
+              duration={0.5}
             >
-              Resume
-            </Link>
+              <Link
+                className="hidden md:block px-4 py-2 ml-2 border border-cyan rounded-sm text-cyan hover:bg-cyan/10 transition-all duration-100 text-sm font-medium"
+                href={"./CV_PhamChauThanhTung.pdf"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Resume
+              </Link>
+            </SlideInElement>
           </div>
           <button
             onClick={() => setShowMenu(!showMenu)}

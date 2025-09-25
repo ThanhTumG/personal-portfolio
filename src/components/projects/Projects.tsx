@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { Title } from "../ui";
 import SingleProject from "./SingleProject";
 import OtherProjects from "./OtherProjects";
+import { SlideInElement } from "../ui/slideInElement";
 
 const featuredProjects = [
   {
@@ -65,53 +66,26 @@ const otherProjects = [
 ];
 
 const Projects = () => {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const element = containerRef.current;
-    if (!element) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: "0px 0px -10% 0px",
-        threshold: 0.15,
-      }
-    );
-
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div
-      id="projects"
-      ref={containerRef}
-      className={`flex flex-col items-start justify-center pb-28 ${
-        isVisible ? "animate-fade-in-up" : "opacity-0"
-      }`}
-    >
-      <Title index="03." content="Some Things I’ve Built" />
+    <SlideInElement>
+      <div
+        id="projects"
+        className="flex flex-col items-start justify-center pb-28
+      "
+      >
+        <Title index="03." content="Some Things I’ve Built" />
 
-      <div className="flex flex-col w-full space-y-24">
-        {featuredProjects.map((project, index) => (
-          <SingleProject key={index} index={index} prjInfo={project} />
-        ))}
-      </div>
+        <div className="flex flex-col w-full space-y-24">
+          {featuredProjects.map((project, index) => (
+            <SingleProject key={index} index={index} prjInfo={project} />
+          ))}
+        </div>
 
-      <div className="flex flex-col mt-32 w-full text-center">
-        <OtherProjects otherProjects={otherProjects} />
+        <div className="flex flex-col mt-32 w-full text-center">
+          <OtherProjects otherProjects={otherProjects} />
+        </div>
       </div>
-    </div>
+    </SlideInElement>
   );
 };
 

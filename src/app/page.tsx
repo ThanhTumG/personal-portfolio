@@ -20,7 +20,7 @@ export default function Home() {
     <div className="font-sans">
       <Cursor />
       <Navigation />
-      <div className="flex flex-col max-w-6xl md:px-16 px-6 pb-10 mx-auto w-full">
+      <div className="flex flex-col max-w-6xl md:px-16 px-6 md:pb-20 pb-10 mx-auto w-full">
         <Welcome />
         <About />
         <Experience />
