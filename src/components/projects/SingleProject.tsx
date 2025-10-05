@@ -70,23 +70,27 @@ const SingleProject = ({ prjInfo, index }: Props) => {
               index % 2 == 1 ? "" : "md:justify-end"
             }`}
           >
-            <Link
-              href={prjInfo.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lightest-slate hover:text-cyan transition-colors"
-            >
-              <GithubIcon className="w-6 h-6" />
-            </Link>
+            {prjInfo.github === "" ? null : (
+              <Link
+                href={prjInfo.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lightest-slate hover:text-cyan transition-colors"
+              >
+                <GithubIcon className="w-6 h-6" />
+              </Link>
+            )}
 
-            <Link
-              href={prjInfo.external}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lightest-slate hover:text-cyan transition-colors"
-            >
-              <ExternalLinkIcon size={24} />
-            </Link>
+            {prjInfo.external === "" ? null : (
+              <Link
+                href={prjInfo.external}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lightest-slate hover:text-cyan transition-colors"
+              >
+                <ExternalLinkIcon size={24} />
+              </Link>
+            )}
           </div>
         </div>
       </div>

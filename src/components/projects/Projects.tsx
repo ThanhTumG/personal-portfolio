@@ -19,7 +19,7 @@ const featuredProjects = [
     ],
     image: "/uniLabPass.png",
     github: "https://github.com/ThanhTumG/unilab-pass-front-end",
-    external: "#",
+    external: "",
   },
   {
     title: "Online Exam System",
@@ -33,8 +33,24 @@ const featuredProjects = [
       "Zustand",
     ],
     image: "/onlineExamSystem.png",
-    github: "#",
-    external: "#",
+    github: "",
+    external: "",
+  },
+  {
+    title: "Multi-Tenant E-commerce Platform",
+    description:
+      "A multi-vendor e-commerce platform that allows multiple tenants to manage independent stores on a shared system.",
+    technologies: [
+      "NextJS",
+      "TypeScript",
+      "tRPC",
+      "Payload CMS",
+      "Zustand",
+      "TailwindCSS",
+    ],
+    image: "/funroad.png",
+    github: "https://github.com/ThanhTumG/multitenant-ecommerce",
+    external: "https://multitenant-ecommerce.vercel.app",
   },
 ];
 
