@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Personal Portfolio
 
-## Getting Started
+This is my personal portfolio website, built with **Next.js**, **React**, and **Tailwind CSS**. It showcases my skills, projects, and experience. I designed it to be a modern, single-page application with smooth scrolling and animations.
 
-First, run the development server:
+### About The Project
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Welcome to my personal portfolio! I'm Pham Chau Thanh Tung, a recent Computer Science graduate from Ho Chi Minh City University of Technology (HCMUT). This portfolio highlights my journey as a software developer, with a focus on web and mobile application development.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The portfolio includes the following sections:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **Welcome**: A hero section that introduces me.
+* **About**: A brief introduction to myself, my skills, and my career goals.
+* **Experience**: A summary of my work experience, including my internship at MeU Solutions.
+* **Projects**: A showcase of my featured and other noteworthy projects.
+* **Contact**: A section with my contact information and a call to action.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Built With
 
-## Learn More
+I built this project with a modern tech stack, including:
 
-To learn more about Next.js, take a look at the following resources:
+* **Next.js**: A React framework for building server-side rendered and static web applications.
+* **React**: A JavaScript library for building user interfaces.
+* **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+* **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+* **Lucide React**: A library of simply designed icons.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To get a local copy up and running, follow these simple steps.
 
-## Deploy on Vercel
+**Prerequisites**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You'll need Node.js and npm (or yarn/pnpm/bun) installed on your machine.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Installation**
+
+1.  Clone the repo
+    ```sh
+    git clone [https://github.com/ThanhTumG/personal-portfolio.git](https://github.com/ThanhTumG/personal-portfolio.git)
+    ```
+2.  Install NPM packages
+    ```sh
+    npm install
+    ```
+3.  Run the development server
+    ```sh
+    npm run dev
+    ```
+4.  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Features
+
+I've included a number of features to make the portfolio stand out:
+
+* **Initial Loader**: A loading screen with a creative "wave" text animation that appears when the site is first loaded.
+* **Cursor Effect**: A custom cursor effect that adds a touch of personality to the site.
+* **Smooth Scrolling**: A smooth scrolling experience that makes it easy to navigate between sections.
+* **Slide-in Animations**: Elements slide in as you scroll down the page, creating a dynamic and engaging experience.
+* **Responsive Design**: The portfolio is fully responsive and looks great on all devices, from mobile phones to desktop computers.
+
+### Projects Showcase
+
+Here are some of the projects I've worked on:
+
+* **UniLab Pass**: A mobile app for university lab access control using multi-factor authentication with QR code scanning and facial recognition.
+* **Online Exam System**: A web app for the Department of Science and Technology of Ho Chi Minh City, supporting up to 150 concurrent users with performance ranking by individual and unit.
+* **Multi-Tenant E-commerce Platform**: A multi-vendor e-commerce platform that allows multiple tenants to manage independent stores on a shared system.
+* **Other Noteworthy Projects**: A collection of smaller projects, such as a Weather App, a Cat Wiki, and a Job Search App.
+
+### Contact
+
+Feel free to get in touch with me through the following channels:
+
+* **Email**: [thanhtumg.2510@gmail.com](mailto:thanhtumg.2510@gmail.com)
+* **GitHub**: [ThanhTumG](https://github.com/ThanhTumG)
+* **LinkedIn**: [tung-pctt2510](https://www.linkedin.com/in/tung-pctt2510/)
